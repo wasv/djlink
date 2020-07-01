@@ -66,11 +66,9 @@ void find_start_address(void) {
 
 void write_output(char *filename) {
   int final_size = 0;
-  int is_exe = 0, is_com = 0;
+  int is_exe = 0;
 
-  if (stricmp(filename + strlen(filename) - 4, ".com") == 0)
-    is_com = 1;
-  else
+  if (stricmp(filename + strlen(filename) - 4, ".com") != 0)
     is_exe = 1;
 
   // Pass 1 - figure out the address of the last byte we have data for

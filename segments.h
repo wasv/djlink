@@ -1,4 +1,5 @@
 /* Copyright (C) 1997 DJ Delorie, see COPYING.DJ for details */
+#include "list.h"
 struct Obj;
 struct SegClass;
 struct Segment;
@@ -11,7 +12,7 @@ struct Group;
 
 struct GSCF {
   GSCF();
-  char *name;
+  const char *name;
   int alignment;
   int size;
   int phys_addr;

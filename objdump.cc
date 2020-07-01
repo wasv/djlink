@@ -6,29 +6,29 @@
 typedef unsigned char uchar;
 #define gc() ((uchar)fgetc(f))
 
-char *fixup_locations[] = {"8-bit offset  ",
-                           "16-bit offset ",
-                           "16-bit segment",
-                           "16:16 pointer ",
-                           "16-high",
-                           "16-bit offset ",
-                           "N/A",
-                           "N/A",
-                           "N/A",
-                           "32-bit offset ",
-                           "N/A",
-                           "16:32 pointer ",
-                           "N/A",
-                           "32-bit offset ",
-                           "N/A",
-                           "N/A"};
+const char *fixup_locations[] = {"8-bit offset  ",
+                                 "16-bit offset ",
+                                 "16-bit segment",
+                                 "16:16 pointer ",
+                                 "16-high",
+                                 "16-bit offset ",
+                                 "N/A",
+                                 "N/A",
+                                 "N/A",
+                                 "32-bit offset ",
+                                 "N/A",
+                                 "16:32 pointer ",
+                                 "N/A",
+                                 "32-bit offset ",
+                                 "N/A",
+                                 "N/A"};
 
-char *frame_names[] = {"SEGDEF  ", "GRPDEF  ", "EXTDEF  ", "Explicit",
-                       "LEDATA  ", "Target  ", "N/A",      "N/A"};
+const char *frame_names[] = {"SEGDEF  ", "GRPDEF  ", "EXTDEF  ", "Explicit",
+                             "LEDATA  ", "Target  ", "N/A",      "N/A"};
 
-char *target_names[] = {"SEGDEF+disp", "GRPDEF+disp", "EXTDEF+disp",
-                        "Explicit   ", "SEGDEF     ", "GRPDEF     ",
-                        "EXTDEF     ", "N/A"};
+const char *target_names[] = {"SEGDEF+disp", "GRPDEF+disp", "EXTDEF+disp",
+                              "Explicit   ", "SEGDEF     ", "GRPDEF     ",
+                              "EXTDEF     ", "N/A"};
 
 int main(int argc, char **argv) {
 

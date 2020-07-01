@@ -170,7 +170,7 @@ void do_fixups() {
             int mode = (*rd & 0x40);
             int location_type = (*rd & 0x3c) >> 2;
             int data_offset = (*rd & 0x03) * 256 + rd[1];
-            int sf_seg, sf_ofs;
+            long int sf_seg, sf_ofs;
             rd += 2;
 
             FixupInfo fi;

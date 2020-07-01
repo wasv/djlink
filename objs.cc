@@ -133,11 +133,10 @@ Obj::Obj(char *Pname, unsigned char *Pbytes, int Plen)
     }
 
     case PUBDEF: {
-      int group, segfrag, frame = 0, i = 2;
+      int group, segfrag, i = 2;
       group = rd[0];
       segfrag = rd[1];
       if (group == 0 && segfrag == 0) {
-        frame = rd[2] + rd[3] * 256;
         i += 2;
       }
       while (i < rl - 1) {
