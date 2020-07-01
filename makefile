@@ -23,13 +23,13 @@ O = \
 	$X
 
 djlink.exe : $O
-	gcc -o $@ $^
+	g++ -o $@ $^
 
 objdump.exe : objdump.o
-	gcc -o $@ $^
+	g++ -o $@ $^
 
 bindiff.exe : bindiff.o
-	gcc -o $@ $^
+	g++ -o $@ $^
 
 %.exe : %.obj
 	tlink $< \;

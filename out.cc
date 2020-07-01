@@ -212,7 +212,7 @@ write_output(char *filename)
 	memset(exe_header, 0, 512);
 	fixup_offset = 0;
       }
-      PUTW(fixup_offset, (int)segment_fixups.list[i] & 0xffff);
+      PUTW(fixup_offset, (long int)segment_fixups.list[i] & 0xffff);
       fixup_offset += 2;
       if (fixup_offset >= 0x200)
       {
@@ -221,7 +221,7 @@ write_output(char *filename)
 	memset(exe_header, 0, 512);
 	fixup_offset = 0;
       }
-      PUTW(fixup_offset, (int)segment_fixups.list[i] >> 16);
+      PUTW(fixup_offset, (long int)segment_fixups.list[i] >> 16);
       fixup_offset += 2;
     }
     fwrite(exe_header, 1, 512, f);
