@@ -4,10 +4,10 @@ struct SegClass;
 struct Segment;
 struct Group;
 
-#define COMBINE_PRIVATE	1
-#define COMBINE_PUBLIC	2
-#define COMBINE_STACK	3
-#define COMBINE_COMMON	4
+#define COMBINE_PRIVATE 1
+#define COMBINE_PUBLIC 2
+#define COMBINE_STACK 3
+#define COMBINE_COMMON 4
 
 struct GSCF {
   GSCF();
@@ -28,7 +28,7 @@ struct SegFrag : public GSCF {
   unsigned char *record;
   int acbp;
   int combine;
-  int frame;		// if absolute
+  int frame; // if absolute
   Segment *segment;
   Group *group;
 };

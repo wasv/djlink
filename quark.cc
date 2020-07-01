@@ -12,8 +12,8 @@
 ** the whole string to see if they're the same.
 */
 
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct hashent {
   hashent *next;
@@ -22,39 +22,34 @@ struct hashent {
 
 static struct hashent *hashtab[4096];
 
-static int
-hash(char *s)
-{
+static int hash(char *s) {
   int rv = 0;
   while (*s) {
     rv <<= 1;
     rv ^= *s++;
-    rv ^= (rv>>10);
+    rv ^= (rv >> 10);
   }
   return rv & 4095;
 }
 
-char *
-quark(char *string)
-{
-  if (!string) return 0;
+char *quark(char *string) {
+  if (!string)
+    return 0;
   int h = hash(string);
   hashent *he;
 
-  for (he=hashtab[h]; he; he=he->next)
+  for (he = hashtab[h]; he; he = he->next)
     if (strcmp(string, he->string) == 0)
       return he->string;
   he = new hashent;
   he->next = hashtab[h];
   hashtab[h] = he;
-  he->string = new char[strlen(string)+1];
+  he->string = new char[strlen(string) + 1];
   strcpy(he->string, string);
   return he->string;
 }
 
-char *
-quark(void *ptr, int len)
-{
+char *quark(void *ptr, int len) {
   /* Yes, it's hokey, but it will always
      work for our cases. */
   char *string = (char *)ptr;

@@ -11,7 +11,7 @@ struct SegFrag;
 struct Obj;
 
 struct Symbol {
-  char *name;	// quark
+  char *name; // quark
   char *filename;
   int sequence;
   int absolute;
